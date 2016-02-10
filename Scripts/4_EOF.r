@@ -45,8 +45,8 @@ X <- X[ , !apply(X, 2, FUN=function(x) all(is.na(x)))]
 									
 								
 ###If you are using either a 'STFDF' or a 'STIDF' object ('spacetime' R package):
-X <- as(r4[,,"TempC"], "xts")  #assuming you already removed stations with all NAs
-X <- as.matrix(X)
+#X <- as(r4[,,"TempC"], "xts")  #assuming you already removed stations with all NAs
+#X <- as.matrix(X)
 
 #Calculate overall mean to subtract from each observation in order to center our data
 X_mean <- mean(as.vector(X), na.rm=T)
@@ -205,7 +205,12 @@ row.names(Mat) <- row.names(X)
 sqrt(mean((X - Mat) ^2, na.rm=TRUE) )  
 #MAE
 mean(abs(X - Mat), na.rm=TRUE)
-
+#COR
+cor(c(X)[!is.na(c(X))], c(Mat)[!is.na(c(X))]) 
+#MSE skill score:
+library(verification)
+vf <- verify(obs = c(X), pred = c(Mat), na.rm=T, obs.type = "cont", frcst.type = "cont")
+#1 - (vf$MSE / vf$MSE.baseline)
 
 
 ##FOR DAILY OR MONTHLY AGGREGATION:
