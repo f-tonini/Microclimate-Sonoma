@@ -1,15 +1,15 @@
 # Spatiotemporal Reconstruction of Missing Forest Microclimate Measurements
 
-![Stations Data Scenario](img/Fig4.png)
+<img src="img/Fig4.png" height="300">
 
-![Interpolated Time Series](img/Fig9.png)
+<img src="img/Fig9.png" height="300">
 
 This repository contains the R scripts developed for the data processing and analysis steps used with the microclimate temperature 
 measurements recorded in the Sonoma study system, California. 
 This repository is officially referenced in the publication by Tonini et al. (2016), 
 [Spatio-temporal reconstruction of missing forest microclimate measurements](http://www.sciencedirect.com/science/article/pii/S0168192315007558?via%3Dihub).
 
-![Sonoma Map](img/Fig1.png)
+<img src="img/Fig1.png" height="300">
 
 ## Credits and Contacts
 
